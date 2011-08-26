@@ -1,0 +1,196 @@
+@import "definements";
+
+@mixin kicker-typography {
+  // BODY TEXT
+
+  p {
+    font-size: $kicker-font-size;
+    font-weight: nromal;
+    line-height: $kicker-line-height;
+    margin-bottom: $kicker-line-height / 2;
+
+    small {
+      font-size: $kicker-font-size - 2;
+      color: $kicker-color-text-light;
+    }
+  }
+
+  // HEADINGS
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: $kicker-color-text;
+    small {
+      color: $kicker-color-text-light;
+    }
+  }
+
+  h1 {
+    margin-bottom: $kicker-font-size;
+    font-size: 30px;
+    small {
+      font-size: 18px;
+    }
+  }
+
+  h2 {
+    font-size: 24px;
+    small {
+      font-size: 14px;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: $kicker-line-height * 2;
+  }
+
+  h3 {
+    font-size: 18px;
+    small {
+      font-size: 14px;
+    }
+  }
+
+  h4 {
+    font-size: 16px;
+    small {
+      font-size: 12px;
+    }
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-size: $kicker-font-size;
+    color: $kicker-color-text-light;
+    text-transform: uppercase;
+  }
+
+  // Inline and block code styles
+
+  code, pre {
+    padding: 0 3px 2px;
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    font-size: 12px;
+    @include border-radius(3px);
+  }
+
+  code {
+    background-color: lighten($kicker-color-secondary, 40%);
+    color: rgba(0, 0, 0, .75);
+    padding: 1px 3px;
+  }
+
+  pre {
+    background-color: #f5f5f5;
+    display: block;
+    padding: $kicker-line-height;
+    margin: 0 0 $kicker-line-height;
+    line-height: $kicker-line-height;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    @include border-radius(3px);
+    white-space: pre-wrap;
+  }
+
+  // Unordered and Ordered lists
+
+  ul, ol {
+    margin: 0 0 $kicker-line-height 25px;
+  }
+
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    line-height: $kicker-line-height;
+  }
+
+  ul.unstyled {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  // Description Lists
+
+  dl {
+    margin-bottom: $kicker-line-height;
+    dt, dd {
+      line-height: $kicker-line-height;
+    }
+    dt {
+      font-weight: bold;
+    }
+    dd {
+      margin-left: $kicker-line-height / 2;
+    }
+  }
+
+  // Horizontal rules
+
+  hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  // Emphasis
+
+  strong {
+    font-style: inherit;
+    font-weight: bold;
+    line-height: inherit;
+  }
+
+  em {
+    font-style: italic;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  // Blockquotes
+
+  blockquote {
+    margin-bottom: $kicker-line-height;
+    border-left: 5px solid #eee;
+    padding-left: 15px;
+
+    p {
+      font-size: 110%;
+      margin-bottom: 0;
+    }
+
+    small {
+      display: block;
+      font-size: 90%;
+      color: $kicker-color-text-light;
+      &:before {
+        content: '\2014 \00A0';
+      }
+    }
+  }
+
+  // Addresses
+
+  address {
+    display: block;
+    line-height: $kicker-line-height;
+    margin-bottom: $kicker-line-height;
+  }
+
+} // end mixin
