@@ -13,7 +13,7 @@ gemspec
 gem 'simple_form'
 
 group :assets do
-  gem 'sass-rails', '~> 3.1.0.rc'
+  gem 'sass-rails', '~> 3.1'
   gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
   gem 'uglifier'
 end

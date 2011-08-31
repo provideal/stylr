@@ -2,7 +2,7 @@ Kicker
 ======
 
 Kicker provides a collection of reusable CSS stuff based on [SASS](http://sass-lang.com) and 
-[Compass](http://compass-style.org) packaged as Rails 3.1 engine to help you kick start your
+[Compass](http://compass-style.org) packaged as a Rails 3.1 engine to help you kick start your
 projects.
 
 This project is heavily inspired by [Twitter's Bootstrap](http://twitter.github.com/bootstrap/) 
