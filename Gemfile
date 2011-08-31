@@ -10,6 +10,8 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
+gem 'simple_form'
+
 group :assets do
   gem 'sass-rails', '~> 3.1.0.rc'
   gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
