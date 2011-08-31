@@ -1,6 +1,6 @@
 @import 'definements';
 
-form {
+@mixin kicker-form {
   $label-width: 150px;
   $label-padding: 5px;
   $label-full-width: $label-width + ($label-padding * 2);
@@ -22,6 +22,30 @@ form {
     padding: 4px;
     color: $kicker-color-text;
     border: 1px solid #ccc;
+
+    &.normal {
+      width: 210px;
+    }
+
+    &.large {
+      width: 260px;
+    }
+
+    &.xlarge {
+      width: 390px;
+    }
+
+    &.small {
+      width: 100px;
+    }
+
+    &.xsmall {
+      width: 50px;
+    }
+
+    &.xxsmall {
+      width: 25px;
+    }
   }
 
   textarea {
@@ -172,16 +196,6 @@ form {
         margin-left: 0;
         padding-left: 0;
       }
-    }
-  }
-
-  // Sizes
-  input[type=text],
-  input[type=password],
-  textarea,
-  select {
-    &.xsmall {
-      width: 25px;
     }
   }
 }

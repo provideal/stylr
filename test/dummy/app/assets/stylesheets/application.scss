@@ -91,5 +91,9 @@ section {
 }
 
 table {
-  @include kicker-table;
+  @include kicker-table();
+}
+
+form {
+  @include kicker-form();
 }
