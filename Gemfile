@@ -11,12 +11,3 @@ gemspec
 # your gem to rubygems.org.
 
 gem 'simple_form'
-
-group :assets do
-  gem 'sass-rails', '~> 3.1'
-  gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
-  gem 'uglifier'
-end
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'

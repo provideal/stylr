@@ -7,14 +7,16 @@ require "kicker/version"
 Gem::Specification.new do |s|
   s.name        = "kicker"
   s.version     = Kicker::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Kicker."
-  s.description = "TODO: Description of Kicker."
+  s.authors     = ["René Sprotte"]
+  s.email       = ["rene.sprotte@provideal.net"]
+  s.homepage    = "https://github.com/provideal/kicker"
+  s.summary     = "A collection of reusable CSS stuff based on SASS and Compass packaged as a Rails 3.1 engine."
+  s.description = "Kicker is a collection of reusable CSS stuff based on SASS and Compass packaged as a Rails 3.1 engine to help you kick-start your projects."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_runtime_dependency "rails", "~> 3.1"
+  s.add_runtime_dependency 'rails', '~> 3.1'
+  s.add_runtime_dependency 'sass-rails', '~> 3.1'
+  s.add_dependency 'compass', '~> 0.12.alpha.0'
 end

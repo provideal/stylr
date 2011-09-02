@@ -1,18 +1,10 @@
-GIT
-  remote: git://github.com/chriseppstein/compass.git
-  revision: 22e2458b77519e8eb8463170c1a1fe4bab105f3e
-  branch: rails31
-  specs:
-    compass (0.12.0.alpha.0.22e2458)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-
 PATH
   remote: .
   specs:
     kicker (0.0.1)
+      compass (~> 0.12.alpha.0)
       rails (~> 3.1)
+      sass-rails (~> 3.1)
 
 GEM
   remote: http://rubygems.org/
@@ -50,9 +42,11 @@ GEM
     bcrypt-ruby (3.0.0)
     builder (3.0.0)
     chunky_png (1.2.1)
+    compass (0.12.alpha.0)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     erubis (2.7.0)
-    execjs (1.2.4)
-      multi_json (~> 1.0)
     fssm (0.2.7)
     hike (1.2.1)
     i18n (0.6.0)
@@ -100,23 +94,17 @@ GEM
     sprockets (2.0.0)
       hike (~> 1.2)
       rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
+      tilt (!= 1.3.0, ~> 1.1)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    uglifier (1.0.2)
-      execjs (>= 0.3.0)
-      multi_json (>= 1.0.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  compass!
   kicker!
-  sass-rails (~> 3.1)
   simple_form
-  uglifier
