@@ -1,7 +1,7 @@
-@import "kicker/definements";
+@import "stylr/definements";
 
 // Buttons
-@mixin kicker-button($default-color: #e6e6e6, $primary-color: $kicker-color-primary, $danger-color: #9d261d) {
+@mixin stylr-button($default-color: #e6e6e6, $primary-color: $stylr-color-primary, $danger-color: #9d261d) {
   $background-color: $default-color;
   $border-color:     darken($background-color, 10%);
   $gradient:         linear-gradient(lighten($background-color, 10%), lighten($background-color, 10%) .25, $background-color);
@@ -17,9 +17,9 @@
   margin: 0;
   color: #333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
-  font-family: $kicker-font-family;
-  font-size: $kicker-font-size;
-  line-height: $kicker-line-height;
+  font-family: $stylr-font-family;
+  font-size: $stylr-font-size;
+  line-height: $stylr-line-height;
   border: 1px solid $border-color;
   border-bottom-color: darken($border-color, 5%);
   cursor: pointer;

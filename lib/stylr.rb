@@ -2,7 +2,7 @@ require 'rails'
 require 'sass-rails'
 require 'compass'
 
-module Kicker
+module Stylr
 end
 
-require 'kicker/engine'
+require 'stylr/engine'

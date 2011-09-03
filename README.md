@@ -1,7 +1,7 @@
-Kicker
-======
+Stylr
+=====
 
-Kicker provides a collection of reusable CSS stuff based on [SASS](http://sass-lang.com) and 
+Stylr provides a collection of reusable CSS stuff based on [SASS](http://sass-lang.com) and 
 [Compass](http://compass-style.org) packaged as a Rails 3.1 engine to help you kick start your
 projects.
 
@@ -19,7 +19,7 @@ TBD.
 Authors
 -------
 
-**René Sprotte** – [@renspr](http://twitter.com/renspr)
+* **René Sprotte** – [@renspr](http://twitter.com/renspr)
 
 Copyright and License
 ---------------------

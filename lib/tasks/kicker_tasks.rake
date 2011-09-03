@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :kicker do
+# task :stylr do
 #   # Task goes here
 # end

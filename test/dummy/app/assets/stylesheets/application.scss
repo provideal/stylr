@@ -8,9 +8,9 @@
 
 @import "blueprint/reset";
 @import "blueprint/grid";
-@import "kicker";
+@import "stylr";
 
-@include kicker-typography;
+@include stylr-typography;
 
 body {
   margin: 0;
@@ -78,17 +78,17 @@ section {
 }
 
 .well {
-  @include kicker-well();
+  @include stylr-well();
 }
 
 .button {
-  @include kicker-button();
+  @include stylr-button();
 }
 
 table {
-  @include kicker-table();
+  @include stylr-table();
 }
 
 form {
-  @include kicker-form();
+  @include stylr-form();
 }
