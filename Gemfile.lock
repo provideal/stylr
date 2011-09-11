@@ -106,5 +106,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  stylr!
   simple_form
+  stylr!
