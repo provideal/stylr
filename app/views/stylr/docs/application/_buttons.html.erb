@@ -1,0 +1,141 @@
+<section id="buttons">
+  <h1 class="section-header">Buttons</h1>
+
+  <div class="container">
+    <h2 class="title">Normal Push Buttons</h2>
+
+    <div class="sidebar">
+      <p>As a convention, buttons are used for actions while links are used for objects. For instance, "Download" could be a button and "recent activity" could be a link.</p>
+      <p>All buttons default to a light gray style, but a number of functional classes can be applied for different color styles. These classes include a blue <code>.primary</code> class, a light-blue <code>.info</code> class, a green <code>.success</code> class, and a red <code>.danger</code> class.</p>
+    </div>
+
+    <div class="content">
+      <p>Button styles can be applied to any class you include the <code>stylr-button()</code> mixin. Typically you’ll want to apply these to only <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, and select <code>&lt;input&gt;</code> elements. Here’s how it looks:</p>
+
+      <h4>Default</h4>
+      <div class="well">
+        <button class="primary">Primary</button>
+        <button>Default</button>
+        <button class="info">Info</button>
+        <a href="#" class="button success">Success</a>
+        <input type="submit" class="danger" value="Danger"/>
+        <input type="submit" class="dark" value="Dark"/>
+      </div>
+
+      <h4>Disabled</h4>
+      <div class="well">
+        <button class="primary" disabled="disabled">Primary</button>
+        <button disabled="disabled">Default</button>
+        <button class="info" disabled="disabled">Info</button>
+        <a href="#" class="button success disabled">Success</a>
+        <input type="submit" class="danger" value="Danger" disabled="disabled"/>
+        <input type="submit" class="dark" value="Dark" disabled="disabled"/>
+      </div>
+
+      <h4>Large</h4>
+      <div class="well">
+        <button class="primary large">Primary</button>
+        <button class="large">Default</button>
+        <button class="info large">Info</button>
+        <a href="#" class="button success large">Success</a>
+        <input type="submit" class="danger large" value="Danger"/>
+        <input type="submit" class="dark large" value="Dark"/>
+      </div>
+
+      <h4>Small</h4>
+      <div class="well">
+        <button class="primary small">Primary</button>
+        <button class="small">Default</button>
+        <button class="info small">Info</button>
+        <a href="#" class="button success small">Success</a>
+        <input type="submit" class="danger small" value="Danger"/>
+        <input type="submit" class="dark small" value="Dark"/>
+      </div>
+
+      <h4>Extra Small</h4>
+      <div class="well">
+        <button class="primary xsmall">Primary</button>
+        <button class="xsmall">Default</button>
+        <button class="info xsmall">Info</button>
+        <a href="#" class="button success xsmall">Success</a>
+        <input type="submit" class="danger xsmall" value="Danger"/>
+        <input type="submit" class="dark xsmall" value="Dark"/>
+      </div>
+
+<pre class="prettyprint linenums">
+&lt;button class=&quot;primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button&gt;Default&lt;/button&gt;
+&lt;button class=&quot;info&quot;&gt;Info&lt;/button&gt;
+&lt;a href=&quot;#&quot; class=&quot;button success&quot;&gt;Success&lt;/a&gt;
+&lt;input type=&quot;submit&quot; class=&quot;danger&quot; value=&quot;Danger&quot;/&gt;
+&lt;input type=&quot;submit&quot; class=&quot;dark&quot; value=&quot;Dark&quot;/&gt;
+</pre>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2 class="title">Dropdown Buttons</h2>
+
+    <div class="content">
+      <p>
+        Stylr provides nice dropdown buttons with the same styles as the normal buttons.
+        To use stylr's dropdown buttons just include the <code>stylr-button-dropdown()</code>
+        mixin into a container class of your choice. Using a div is a good idea ;-). But it is important
+        to give that container also the class <code>stylr-button-dropdown</code> to make the
+        javascript work out of the box.
+      </p>
+
+      <div class="dropdown-button stylr-button-dropdown">
+        Dropdown 1
+        <ul>
+          <li><a href="#">Sub-Item 1</a></li>
+          <li><a href="#">Sub-Item 2</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Sub-Item 3</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown-button stylr-button-dropdown dark">
+        Dropdown 2
+        <ul>
+          <li><a href="#">Sub-Item 1</a></li>
+          <li><a href="#">Sub-Item 2</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Sub-Item 3</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown-button stylr-button-dropdown success large">
+        Dropdown 3
+        <ul>
+          <li><a href="#">Sub-Item 1</a></li>
+          <li><a href="#">Sub-Item 2</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Sub-Item 3</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown-button stylr-button-dropdown danger xsmall">
+        Dropdown 3
+        <ul>
+          <li><a href="#">Sub-Item 1</a></li>
+          <li><a href="#">Sub-Item 2</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Sub-Item 3</a></li>
+        </ul>
+      </div>
+
+<pre class="prettyprint linenums">
+&lt;div class=&quot;dropdown-button stylr-button-dropdown&quot;&gt;
+  Dropdown 1
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sub-Item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sub-Item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sub-Item 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+</section>

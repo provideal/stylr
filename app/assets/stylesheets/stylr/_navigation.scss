@@ -1,0 +1,205 @@
+@import 'stylr/base';
+@import 'stylr/forms';
+
+// ----
+// Menu
+// ----
+
+$stylr-menu-line-height: $stylr-line-height !default;
+$stylr-menu-text-color: $stylr-text-color !default;
+$stylr-menu-hover-color: lighten($stylr-primary-color, 40%) !default;
+
+@mixin stylr-menu() {
+  @include nested-reset();
+  @include pie-clearfix();
+  color: $stylr-menu-text-color;
+  line-height: $stylr-menu-line-height;
+
+  > ul {
+    @include reset-list-style();
+
+    > li {
+      @include border-radius(4px);
+      @include float-left();
+      display: block;
+      margin: 0;
+      padding: 0 6px;
+
+      &:hover {
+        background-color: $stylr-menu-hover-color;
+      }
+
+      &.raw:hover {
+        background-color: transparent;
+      }
+
+      a {
+        color: $stylr-menu-text-color;
+        text-decoration: none;
+        display: block;
+      }
+
+      &.dropdown {
+        position: relative;
+
+        > a {
+          @include stylr-util-dropdown-arrow($stylr-menu-text-color);
+        }
+
+        > ul {
+          @include stylr-util-dropdown-panel();
+        }
+      }
+    }
+  }
+}
+
+
+// ------
+// Topbar
+// ------
+
+$stylr-topbar-line-height: 40px !default;
+$stylr-topbar-title-width: 150px !default;
+$stylr-topbar-text-color: #fff !default;
+$stylr-topbar-opaque-background: true !default;
+$stylr-topbar-start-color: #323232 !default;
+$stylr-topbar-end-color: #222 !default;
+
+@mixin stylr-topbar {
+
+  @include nested-reset();
+  @include reset-list-style();
+  @include trailer(1);
+  @include pie-clearfix();
+  @include border-radius(6px);
+
+  @if $stylr-topbar-opaque-background {
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-topbar-text-color,
+      $start-color: $stylr-topbar-start-color,
+      $end-color: $stylr-topbar-end-color,
+      $use-border: false,
+      $use-box-shadow: false,
+      $use-text-shadow: true
+    );
+  }
+
+
+  line-height: $stylr-topbar-line-height;
+  padding: 0 10px;
+  color: $stylr-topbar-text-color;
+
+  > h1 {
+    color: $stylr-topbar-text-color;
+    @include float-left();
+    font-size: 16px;
+    width: $stylr-topbar-title-width;
+    margin-right: 15px;
+  }
+
+  .menu {
+    $stylr-menu-line-height: $stylr-topbar-line-height;
+    $stylr-menu-text-color: $stylr-topbar-text-color;
+    $stylr-menu-hover-color: darken($stylr-topbar-end-color, 5%);
+
+    $stylr-util-dropdown-panel-text-color: $stylr-topbar-text-color;
+    $stylr-util-dropdown-panel-start-color: darken($stylr-topbar-start-color, 5%);
+    $stylr-util-dropdown-panel-end-color: darken($stylr-topbar-end-color, 5%);
+
+    @include stylr-menu();
+    @include float-left();
+
+    > ul > li {
+      @include border-radius(0);
+      &.dropdown > ul {
+        @include border-radius(0);
+        @include border-bottom-radius(4px);
+      }
+    }
+  }
+
+  .sub-area {
+    @include float-right();
+  }
+
+  form {
+    @include stylr-form();
+    @include inline-block();
+    vertical-align: baseline;
+    margin: 0;
+  }
+}
+
+
+// --------------
+// Tabs and Pills
+// --------------
+@mixin stylr-tabs($style: 'tabs') {
+
+  @include nested-reset();
+  @include reset-box-model();
+  @include reset-list-style();
+  @include trailer(1);
+  @include leader(1);
+  @include pie-clearfix();
+  width: 100%;
+
+  @if $style == 'pills' {
+
+  } @else {
+    border-bottom: 1px solid $stylr-gray-color;
+  }
+
+  > li {
+    @include float-left();
+    position: relative;
+    top: 1px;
+
+    // -------------
+    // default state
+    // -------------
+
+    > a {
+      padding: 0 15px;
+      margin-right: 2px;
+      display: block;
+      text-decoration: none;
+
+      @if $style == 'pills' {
+        line-height: $stylr-line-height * 1.5;
+        @include border-radius($stylr-line-height);
+
+        &:hover {
+          background-color: lighten($stylr-primary-color, 40%);
+        }
+      } @else {
+        line-height: $stylr-line-height * 2;
+        @include border-top-radius(4px);
+        border: 1px solid transparent;
+
+        &:hover {
+          text-decoration: none;
+          background-color: $stylr-light-gray-color;
+          border-bottom-color: $stylr-gray-color;
+        }
+      }
+    }
+
+    // ------------
+    // active state
+    // ------------
+
+    &.active > a {
+      @if $style == 'pills' {
+        background-color: $stylr-primary-color;
+        color: #fff;
+      } @else {
+        color: $stylr-text-color;
+        border-color: $stylr-gray-color;
+        border-bottom-color: transparent;
+        background-color: #fff;
+      }
+    }
+  }
+}

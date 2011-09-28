@@ -1,7 +1,7 @@
 Dummy::Application.routes.draw do
 
-  resources :users
+  mount Stylr::Engine => '/stylr', :as => 'stylr'
 
-  root :to => 'application#index'
+  root :to => redirect('/stylr')
 
 end

@@ -1,0 +1,15 @@
+<section id="forms">
+  <h1 class="section-header">Forms <small></small></h1>
+
+  <div class="container">
+    <div class="sidebar">
+      <p>stylr supports forms generated with the <a href="https://github.com/plataformatec/simple_form">simple_form gem</a> out of the box.</p>
+    </div>
+
+    <div class="content" id="form-content">
+      <%= render 'form' %>
+
+      <pre class="prettyprint linenums"><%= file_contents(File.join(File.dirname(File.expand_path(__FILE__)), '_form.html.erb')) %>
+    </div>
+  </div>
+</section>

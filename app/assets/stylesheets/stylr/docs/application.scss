@@ -1,0 +1,167 @@
+// -----------------------------------------------------------------
+// To use stylr, just import the files you want or import everything
+// by importing stylr/all. Note: Importing stylr will apply a css
+// reset (compass/reset). When importing the typography module a
+// vertical rhythm will be applied too.
+// -----------------------------------------------------------------
+
+// @import "stylr/typography";
+// @import "stylr/buttons";
+// @import "stylr/patterns";
+// @import "stylr/tables";
+// @import "stylr/forms";
+// @import "stylr/navigation";
+@import 'stylr/all';
+
+// --------------------------------------------------------------------
+// Typography: To use stylr's typography mixin just include it globally
+// or into any class you want. You may set $use-body: true to include
+// basic body styles.
+// --------------------------------------------------------------------
+@include stylr-typography($use-body: true);
+
+// ------------------------------------------------------------------
+// Tables: To use stylr's table styles just include the stylr-table()
+// mixin into the table class you like. E.g. table, .mytable ...
+// ------------------------------------------------------------------
+table {
+  @include stylr-table();
+}
+
+// ------------------------------------------------------------------
+// Forms: To use stylr's form styles just include the stylr-form()
+// mixin into the form class you like. E.g. form, .simpleform ...
+//
+// Note: stylr's form styles will work out of the box with the markup
+// produced by the simple_form gem.
+// ------------------------------------------------------------------
+form {
+  @include stylr-form();
+}
+
+// ---------------------------------------------------------------------
+// Buttons: To use stylr's button styles just include the stylr-button()
+// mixin into the classes you like. E.g. input[type="submit"], button,
+// a.button, ...
+// ---------------------------------------------------------------------
+input[type="submit"],
+button,
+a.button {
+  @include stylr-button();
+}
+
+// ---------------------------------------------------------------------
+// Dropdown Buttons: To use stylr's dropdown buttons just include
+// the stylr-button-dropdown() mixin into a container class of your
+// choice. Using a div is a good idea ;-). But it is important to give
+// that container also the class stylr-button-dropdown to make the
+// javascript work out of the box. Dropdown buttons support the
+// same styles (primary, danger, info, ...) as the normal buttons do.
+// ---------------------------------------------------------------------
+
+div.dropdown-button {
+  @include stylr-button-dropdown();
+}
+
+// ----
+// Menu
+// ----
+.menu1 {
+  @include stylr-menu();
+}
+
+// ------
+// Topbar
+// ------
+
+.topbar1 {
+  @include stylr-topbar();
+}
+
+.topbar2 {
+  $stylr-topbar-text-color: #fff;
+  $stylr-topbar-start-color: $stylr-primary-color;
+  $stylr-topbar-end-color: darken($stylr-primary-color, 5%);
+  @include stylr-topbar();
+
+}
+
+// --------------
+// Tabs and Pills
+// --------------
+.tabs {
+  @include stylr-tabs();
+}
+
+.pills {
+  @include stylr-tabs($style: 'pills');
+}
+
+// ------
+// Alerts
+// ------
+
+.alert {
+  @include stylr-alerts();
+}
+
+// -----------------------------------------------------------
+// Just make some adjustments to style the example application
+// This is the way you can override stylr properties in your
+// own app to fit your needs.
+// -----------------------------------------------------------
+$blueprint-liquid-container-width: 100%;
+$blueprint-liquid-container-min-width: none;
+@import "blueprint/liquid";
+
+body {
+  margin: 0 auto;
+  width: 920px;
+  padding: 20px;
+  border-left: 3px solid $stylr-light-gray-color;
+  border-right: 3px solid $stylr-light-gray-color;
+}
+
+section {
+  @include trailing-border();
+  @include clearfix();
+  overflow: visible;
+  border-width: 3px;
+  border-color: $stylr-gray-color;
+
+  h1.section-header {
+    @include margin-trailer(1);
+  }
+
+  .container {
+    $sidebar-width: 200px;
+
+    @include clearfix();
+    @include margin-trailer(1);
+    overflow: visible;
+
+    h2.title {
+      border-bottom: 2px solid $stylr-light-gray-color;
+    }
+
+    .sidebar {
+      @include float-left();
+      width: $sidebar-width;
+      border-bottom: 2px solid $stylr-light-gray-color;
+    }
+
+    .content {
+      margin-left: $sidebar-width + 30px;
+      &.no-sidebar {
+        margin-left: 0;
+      }
+
+      @include leader(1);
+      .grid {
+        @include container();
+        .col2-1 { @include column(12); }
+        .col2-2 { @include column(12, $last: true); }
+      }
+    }
+  }
+}

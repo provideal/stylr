@@ -1,0 +1,292 @@
+<section id="typography">
+  <h1 class="section-header">Typography <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+
+  <!-- Headings -->
+  <div class="container">
+    <h2 class="title">Headings</h2>
+
+    <div class="sidebar">
+      <p>A standard typographic hierarchy for structuring your webpages.</p>
+    </div>
+
+    <div class="content">
+      <h1>h1. Heading 1 <small>small sub heading&hellip;</small></h1>
+      <h2>h2. Heading 2 <small>small sub heading&hellip;</small></h2>
+      <h3>h3. Heading 3 <small>small sub heading&hellip;</small></h3>
+      <h4>h4. Heading 4 <small>small sub heading&hellip;</small></h4>
+      <h5>h5. Heading 5 <small>small sub heading&hellip;</small></h5>
+      <h6>h6. Heading 6 <small>small sub heading&hellip;</small></h6>
+    </div>
+  </div>
+
+  <!-- Paragraphs -->
+  <div class="container">
+    <h2 class="title">Paragraphs</h2>
+
+    <div class="content">
+      <p><a href="#">Lorem ipsum dolor</a> sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+      <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <hr/>
+      <p class="muted">This paragraph uses <code>&lt;p class=&quot;muted&quot;&gt;...&lt;/p&gt;</code> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+    </div>
+  </div>
+
+  <!-- Misc Elements -->
+  <div class="container">
+    <h2 class="title">Misc. elements</h2>
+
+    <div class="sidebar">
+      <p>Emphasis tags (<code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code>) should be used to indicate additional importance or emphasis of a word or phrase relative to its surrounding copy. Use <code>&lt;strong&gt;</code> for importance and <code>&lt;em&gt;</code> for <em>stress</em> emphasis.</p>
+    </div>
+
+    <div class="content">
+      <h3>Emphasis in a paragraph</h3>
+      <p>Fusce dapibus <strong>tellus ac cursus commodo</strong>, <em>tortor mauris condimentum nibh</em>, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+      <p><strong>Note:</strong> It's still okay to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> tags in HTML5, but they don't come with inherent styles anymore. <code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance, while <code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.</p>
+
+      <h3>Addresses</h3>
+      <p>The <code>&lt;address&gt;</code> element is used for contact information for its nearest ancestor, or the entire body of work. Here’s how it looks:</p>
+      <address>
+        <strong>Twitter, Inc.</strong><br />
+        795 Folsom Ave, Suite 600<br />
+        San Francisco, CA 94107<br />
+        <abbr title="Phone">P:</abbr> (123) 456-7890
+      </address>
+      <p><strong>Note:</strong> Each line in an <code>&lt;address&gt;</code> must end with a line-break (<code>&lt;br /&gt;</code>) or be wrapped in a block-level tag (e.g., <code>&lt;p&gt;</code>) to properly structure the content.</p>
+
+      <h3>Abbreviations</h3>
+      <p>For abbreviations and acronyms, use the <code>&lt;abbr&gt;</code> tag (<code>&lt;acronym&gt;</code> is deprecated in <abbr title="HyperText Markup Langugage 5">HTML5</abbr>). Put the shorthand form within the tag and set a title for the complete name.</p>
+    </div>
+  </div>
+
+  <!-- Code -->
+  <div class="container">
+    <h2 class="title">Presenting Code</h2>
+
+    <div class="sidebar">
+      <p>
+        <code>&lt;code&gt;</code>
+        <code>&lt;pre&gt;</code>
+      </p>
+      <p>Pimp your code in style with two simple tags. For even more awesomeness through javascript, drop in Google's code prettify library and you're set.</p>
+    </div>
+
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 250px;">Element</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;code&gt;</code></td>
+            <td>In a line of text like this, your wrapped code will look like this <code>&gt;html&lt;</code> element.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;pre&gt;</code></td>
+            <td>
+<pre>&lt;div&gt;
+  &lt;h1&gt;Heading&lt;/h1&gt;
+  &lt;p&gt;Something right here...&lt;/p&gt;
+&lt;/div&gt;</pre>
+              <p><strong>Note:</strong> Be sure to keep code within <code>pre</code> tags as close to the left as possible; it will render all tabs.</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>&lt;pre class="prettyprint linenums"&gt;</code></td>
+            <td>
+              <p>Using the google-code-prettify library, you're blocks of code get a slightly different visual style and automatic syntax highlighting.</p>
+<pre class="prettyprint linenums"><span class="tag">&lt;div&gt;</span><span class="pln">
+  </span><span class="tag">&lt;h1&gt;</span><span class="pln">Heading</span><span class="tag">&lt;/h1&gt;</span><span class="pln">
+  </span><span class="tag">&lt;p&gt;</span><span class="pln">Something right here...</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span></pre>
+              <p><a href="http://code.google.com/p/google-code-prettify/">Download google-code-prettify</a> and view the readme for <a href="http://google-code-prettify.googlecode.com/svn/trunk/README.html">how to use</a>.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Blockquotes -->
+  <div class="container">
+    <h2 class="title">Blockquotes</h2>
+
+    <div class="sidebar">
+      <p>
+        <code>&lt;blockquote&gt;</code>
+        <code>&lt;p&gt;</code>
+        <code>&lt;small&gt;</code>
+      </p>
+    </div>
+    <div class="content">
+      <h3>How to quote</h3>
+      <p>To include a blockquote, wrap <code>&lt;blockquote&gt;</code> around <code>&lt;p&gt;</code> and <code>&lt;small&gt;</code> tags. Use the <code>&lt;small&gt;</code> element to cite your source and you'll get an em dash <code>&amp;mdash;</code> before it.</p>
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        <small>Dr. Julius Hibbert</small>
+      </blockquote>
+<pre class="prettyprint">
+&lt;blockquote&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.&lt;/p&gt;
+  &lt;small&gt;Dr. Julius Hibbert&lt;/small&gt;
+&lt;/blockquote&gt;
+</pre>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="title">Inline Labels</h2>
+
+    <div class="sidebar">
+      <p>
+        <code>&lt;span class=&quot;label&quot;/&gt;</code>
+      </p>
+      <p>Call attention to or flag any phrase in your body text.</p>
+    </div>
+
+    <div class="content">
+      <table class="striped">
+        <thead>
+          <tr>
+            <th style="width: 60%;">Label</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>&lt;span class="label"&gt;Default&lt;/span&gt;</code>
+            </td>
+            <td>
+              <span class="label">Default</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>&lt;span class="label success"&gt;New&lt;/span&gt;</code>
+            </td>
+            <td>
+              <span class="label success">New</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>&lt;span class="label warning"&gt;Warning&lt;/span&gt;</code>
+            </td>
+            <td>
+              <span class="label warning">Warning</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>&lt;span class="label important"&gt;Important&lt;/span&gt;</code>
+            </td>
+            <td>
+              <span class="label important">Important</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>&lt;span class="label notice"&gt;Notice&lt;/span&gt;</code>
+            </td>
+            <td>
+              <span class="label notice">Notice</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="title">Lists</h2>
+
+    <div class="content">
+      <div class="grid">
+        <div class="col2-1">
+          <h3>Unordered <code>&lt;ul&gt;</code></h3>
+          <ul>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>Nulla volutpat aliquam velit
+              <ul>
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies
+                  <ul>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                  </ul>
+                </li>
+                <li>Vestibulum laoreet porttitor sem</li>
+                <li>Ac tristique libero volutpat at</li>
+              </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+          </ul>
+        </div>
+        <div class="col2-2">
+          <h3>Unstyled <code>&lt;ul.unstyled&gt;</code></h3>
+          <ul class="unstyled">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>Nulla volutpat aliquam velit
+              <ul class="unstyled">
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies</li>
+                <li>Vestibulum laoreet porttitor sem</li>
+                <li>Ac tristique libero volutpat at</li>
+              </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+          </ul>
+        </div>
+
+        <div class="col2-1">
+          <h3>Ordered <code>&lt;ol&gt;</code></h3>
+          <ol>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Nulla volutpat aliquam velit
+              <ol>
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies</li>
+                <li>Vestibulum laoreet porttitor sem</li>
+                <li>Ac tristique libero volutpat at</li>
+              </ol>
+            </li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>Nulla volutpat aliquam velit</li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+          </ol>
+        </div>
+
+        <div class="col2-2">
+          <h3>Description <code>dl</code></h3>
+          <dl>
+            <dt>Description lists</dt>
+            <dd>A description list is perfect for defining terms.</dd>
+            <dt>Euismod</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+            <dt>Malesuada porta</dt>
+            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

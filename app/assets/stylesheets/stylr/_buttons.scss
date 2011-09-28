@@ -1,108 +1,188 @@
-@import "stylr/definements";
+@import "stylr/base";
 
-// Buttons
-@mixin stylr-button($default-color: #e6e6e6, $primary-color: $stylr-color-primary, $danger-color: #9d261d) {
-  $background-color: $default-color;
-  $border-color:     darken($background-color, 10%);
-  $gradient:         linear-gradient(lighten($background-color, 10%), lighten($background-color, 10%) .25, $background-color);
+$stylr-button-default-text-color: #333 !default;
+$stylr-button-default-start-color: #f5f5f5 !default;
+$stylr-button-default-end-color: #ddd !default;
 
-  @include inline-block;
-  @include border-radius(4px);
-  @include background-image($gradient);
-  @include single-transition(all, 0.1s, linear);
+$stylr-button-primary-text-color: #fff !default;
+$stylr-button-primary-start-color: lighten($stylr-primary-color, 10%) !default;
+$stylr-button-primary-end-color: $stylr-primary-color !default;
 
-  background-color: $background-color;
-  background-repeat: no-repeat;
-  padding: 4px 14px;
-  margin: 0;
-  color: #333;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
-  font-family: $stylr-font-family;
-  font-size: $stylr-font-size;
-  line-height: $stylr-line-height;
-  border: 1px solid $border-color;
-  border-bottom-color: darken($border-color, 5%);
+$stylr-button-info-text-color: #fff !default;
+$stylr-button-info-start-color: #62CFFC !default;
+$stylr-button-info-end-color: darken(#62CFFC, 15%) !default;
+
+$stylr-button-danger-text-color: #fff !default;
+$stylr-button-danger-start-color: #ee5f5b !default;
+$stylr-button-danger-end-color: #c43c35 !default;
+
+$stylr-button-success-text-color: #fff !default;
+$stylr-button-success-start-color: #62c462 !default;
+$stylr-button-success-end-color: #57a957 !default;
+
+$stylr-button-dark-text-color: #fff !default;
+$stylr-button-dark-start-color: #333 !default;
+$stylr-button-dark-end-color: darken(#333, 15%) !default;
+
+// button
+@mixin stylr-button {
+  // ------
+  // basics
+  // ------
   cursor: pointer;
+  @include inline-block();
+  vertical-align: baseline;
+  font-size: $stylr-font-size;
+  line-height: normal; // we need to use padding alone, because FF limit line-height by default
+  font-family: $stylr-font-family;
+  padding: 5px 14px;
+  margin: 0;
+  background-repeat: no-repeat;
+  &::-moz-focus-inner { border: 0; padding: 0; } // Help Firefox not be a jerk about adding extra padding to buttons
+  @include border-radius(4px);
+  @include single-transition(all, 0.1s, linear);
   text-decoration: none;
 
-  &:hover {
-    background-position: 0 -.8em;
-    text-decoration: none;
-  }
+  // --------------------
+  // the "default" button
+  // --------------------
+  @include stylr-util-gradient-bar(
+    $text-color: $stylr-button-default-text-color,
+    $start-color: $stylr-button-default-start-color,
+    $end-color: $stylr-button-default-end-color
+  );
 
-  &:active {
-    $inset-shadow: $border-color 0 1px 3px inset;
-    @include box-shadow($inset-shadow);
-    text-decoration: none;
-  }
-
+  // --------------------
+  // the "primary" button
+  // --------------------
   &.primary {
-    $background-color: $primary-color;
-    $border-color:     darken($background-color, 10%);
-    $gradient:         linear-gradient(lighten($background-color, 10%), lighten($background-color, 10%) .25, $background-color);
-
-    @include background-image($gradient);
-    background-color: $background-color;
-    background-repeat: no-repeat;
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
-    border: 1px solid $border-color;
-    border-bottom-color: darken($border-color, 5%);
-
-    &:active {
-      $inset-shadow: $border-color 0 1px 3px inset;
-      @include box-shadow($inset-shadow);
-    }
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-button-primary-text-color,
+      $start-color: $stylr-button-primary-start-color,
+      $end-color: $stylr-button-primary-end-color
+    );
   }
 
+  // -----------------
+  // the "info" button
+  // -----------------
+  &.info {
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-button-info-text-color,
+      $start-color: $stylr-button-info-start-color,
+      $end-color: $stylr-button-info-end-color
+    );
+  }
+
+  // -------------------
+  // the "danger" button
+  // -------------------
   &.danger {
-    $background-color: $danger-color;
-    $border-color:     darken($background-color, 5%);
-    $gradient:         linear-gradient(lighten($background-color, 10%), lighten($background-color, 10%) .25, $background-color);
-
-    @include background-image($gradient);
-    background-color: $background-color;
-    background-repeat: no-repeat;
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
-    border: 1px solid $border-color;
-    border-bottom-color: darken($border-color, 5%);
-
-    &:active {
-      $inset-shadow: $border-color 0 1px 3px inset;
-      @include box-shadow($inset-shadow);
-    }
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-button-danger-text-color,
+      $start-color: $stylr-button-danger-start-color,
+      $end-color: $stylr-button-danger-end-color
+    );
   }
 
-  &.large {
-    font-size: 120%;
-    line-height: 120%;
-    @include border-radius(6px);
+  // --------------------
+  // the "success" button
+  // --------------------
+  &.success {
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-button-success-text-color,
+      $start-color: $stylr-button-success-start-color,
+      $end-color: $stylr-button-success-end-color
+    );
   }
 
-  &.small {
-    font-size: 90%;
-    line-height: 90%;
-    @include border-radius(3px);
+  // -----------------
+  // the "dark" button
+  // -----------------
+  &.dark {
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-button-dark-text-color,
+      $start-color: $stylr-button-dark-start-color,
+      $end-color: $stylr-button-dark-end-color
+    );
   }
 
+  // ------
+  // states
+  // ------
+
+  // focus state for keyboard and accessibility
+  &:focus {
+    outline: 1px dotted #666;
+  }
+
+  // hover state
+  &:hover {
+    text-decoration: none;
+    background-position: 0 -15px;
+  };
+
+  // active state
+  &:active {
+    @include box-shadow(
+      rgba(#000, .25) 0 2px 4px inset,
+      rgba(#000, .05) 0 1px 2px
+    );
+  }
+
+  // disabled state
   &.disabled,
   &:disabled {
+    @include box-shadow(none);
     @include opacity(.65);
     cursor: default;
+    pointer-events: none;
 
     &:hover {
       background-position: 0;
     }
-
-    &:active {
-      @include box-shadow(none);
-    }
   }
 
-  // Help Firefox not be a jerk about adding extra padding to buttons
-  &::-moz-focus-inner {
-      border: 0;
-      padding: 0;
+  // -----
+  // sizes
+  // -----
+  &.large {
+    @include border-radius(6px);
+    font-size: $stylr-font-size + 2px;
+    padding: 9px 14px;
+  }
+
+  &.small {
+    font-size: $stylr-font-size - 2px;
+    padding: 5px 9px;
+  }
+
+  &.xsmall {
+    font-size: $stylr-font-size - 2px;
+    padding: 2px 4px;
+  }
+}
+
+// dropdown button
+@mixin stylr-button-dropdown {
+  @include stylr-button();
+  @include stylr-util-dropdown-arrow(#333);
+  position: relative;
+
+  a {
+    text-decoration: none;
+    color: $stylr-button-default-text-color;
+  }
+
+  &.primary,
+  &.info,
+  &.success,
+  &.danger,
+  &.dark {
+    @include stylr-util-dropdown-arrow(#fff);
+  }
+
+  > ul {
+    @include stylr-util-dropdown-panel();
   }
 }

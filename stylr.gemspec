@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '~> 3.1'
   s.add_dependency 'sass-rails', '~> 3.1'
   s.add_dependency 'compass', '~> 0.12.alpha.0'
+  s.add_dependency 'jquery-rails'
 end

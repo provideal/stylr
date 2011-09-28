@@ -1,0 +1,99 @@
+@import "stylr/base";
+
+$stylr-alert-default-text-color: #333 !default;
+$stylr-alert-default-start-color: #f5f5f5 !default;
+$stylr-alert-default-end-color: #ddd !default;
+
+$stylr-alert-warning-text-color: #333 !default;
+$stylr-alert-warning-start-color: #FAECBE !default;
+$stylr-alert-warning-end-color: #EEDC94 !default;
+
+$stylr-alert-error-text-color: #fff !default;
+$stylr-alert-error-start-color: #EC5D59 !default;
+$stylr-alert-error-end-color: #C63E37 !default;
+
+$stylr-alert-success-text-color: #fff !default;
+$stylr-alert-success-start-color: #62C362 !default;
+$stylr-alert-success-end-color: #57AA57 !default;
+
+$stylr-alert-info-text-color: #fff !default;
+$stylr-alert-info-start-color: #59BEDC !default;
+$stylr-alert-info-end-color: #359DBB !default;
+
+@mixin stylr-alerts() {
+
+  @include leader(1);
+  @include trailer(1);
+  @include pie-clearfix();
+  @include stylr-util-gradient-bar(
+    $text-color: $stylr-alert-default-text-color,
+    $start-color: $stylr-alert-default-start-color,
+    $end-color: $stylr-alert-default-end-color
+  );
+  @include border-radius(6px);
+  padding: 4px 10px;
+  line-height: $stylr-line-height;
+
+  p {
+    margin: 0;
+  }
+
+  > .actions {
+    @include leader(1);
+  }
+
+  > a.close {
+    @include float-right();
+    color: $stylr-alert-default-text-color;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  &.warning {
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-alert-warning-text-color,
+      $start-color: $stylr-alert-warning-start-color,
+      $end-color: $stylr-alert-warning-end-color
+    );
+
+    > a.close {
+      color: $stylr-alert-warning-text-color;
+    }
+  }
+
+  &.error {
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-alert-error-text-color,
+      $start-color: $stylr-alert-error-start-color,
+      $end-color: $stylr-alert-error-end-color
+    );
+
+    > a.close {
+      color: $stylr-alert-error-text-color;
+    }
+  }
+
+  &.success {
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-alert-success-text-color,
+      $start-color: $stylr-alert-success-start-color,
+      $end-color: $stylr-alert-success-end-color
+    );
+
+    > a.close {
+      color: $stylr-alert-success-text-color;
+    }
+  }
+
+  &.info {
+    @include stylr-util-gradient-bar(
+      $text-color: $stylr-alert-info-text-color,
+      $start-color: $stylr-alert-info-start-color,
+      $end-color: $stylr-alert-info-end-color
+    );
+
+    > a.close {
+      color: $stylr-alert-info-text-color;
+    }
+  }
+}

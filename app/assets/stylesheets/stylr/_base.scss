@@ -1,0 +1,124 @@
+// make use of the very nice compass framework
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities/general/min";
+@import "compass/utilities/general/float";
+
+// stylr's global contstants
+$stylr-font-family:      "Helvetica Neue", Helvetica, Arial, sans-serif;
+$stylr-font-size:        13px !default;
+$stylr-line-height:      18px !default;
+$stylr-primary-color:    #3274D0 !default;
+$stylr-secondary-color:  #7CBA0F !default;
+$stylr-gray-color:       #DCDCDC !default;
+$stylr-light-gray-color: #f5f5f5 !default;
+$stylr-dark-gray-color:  #2c2c2c !default;
+$stylr-text-color:       #333 !default;
+$stylr-muted-text-color: lighten($stylr-text-color, 35%)!default;
+
+// ------------
+// gradient bar
+// ------------
+
+@mixin stylr-util-gradient-bar($text-color, $start-color, $end-color, $css2-fallback-color: $end-color, $use-border: true, $use-box-shadow: true, $use-text-shadow: true) {
+  @include background-image(
+    linear-gradient($start-color, $start-color 25%, $end-color)
+  );
+  background-color: $css2-fallback-color;
+
+  @if $use-text-shadow {
+    @if lightness($text-color) < 50% {
+      @include text-shadow(rgba(#fff, .75) 0 1px 1px);
+    } @else {
+      @include text-shadow(rgba(#000, .25) 0 -1px 0);
+    }
+  }
+  color: $text-color;
+
+  @if $use-box-shadow {
+    @include box-shadow(
+      rgba(#fff, .2) 0 1px 0 inset,
+      rgba(#000, .05) 0 1px 2px
+    );
+  }
+
+  @if $use-border {
+    border: 1px solid darken($end-color, 5%);
+    border-bottom-color: darken($end-color, 15%);
+  }
+}
+
+// --------------
+// dropdown arrow
+// --------------
+
+@mixin stylr-util-dropdown-arrow($color) {
+  &:after {
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    text-indent: -99999px;
+    overflow: hidden;
+    content: "\2193";
+    margin-left: 4px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid $color;
+    @include inline-block;
+  }
+}
+
+// --------------
+// dropdown panel
+// --------------
+
+$stylr-util-dropdown-panel-text-color: $stylr-text-color !default;
+$stylr-util-dropdown-panel-start-color: #f5f5f5 !default;
+$stylr-util-dropdown-panel-end-color: #ddd !default;
+
+@mixin stylr-util-dropdown-panel() {
+  @include reset-box-model();
+  @include reset-list-style();
+  @include border-radius(4px);
+  @include min-width(150px);
+  @include stylr-util-gradient-bar(
+    $text-color: $stylr-util-dropdown-panel-text-color,
+    $start-color: $stylr-util-dropdown-panel-start-color,
+    $end-color: $stylr-util-dropdown-panel-end-color
+  );
+
+  z-index: 100;
+  font-size: $stylr-font-size;
+  display: none;
+  position: absolute;
+  left: 0;
+  padding: 4px 0 0 0;
+
+  &.open {
+    display: block;
+  }
+
+  li {
+    display: block;
+    line-height: $stylr-line-height;
+
+    a {
+      display: block;
+      padding: 4px 6px;
+    }
+
+    &:hover {
+      background: darken($stylr-util-dropdown-panel-end-color, 5%);
+    }
+
+    &.divider {
+      height: 1px;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      background-color: darken($stylr-util-dropdown-panel-end-color, 5%);
+      border-bottom: 1px solid lighten($stylr-util-dropdown-panel-end-color, 5%);
+    }
+  }
+}

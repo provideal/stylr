@@ -1,0 +1,22 @@
+<%= simple_form_for @user, :url => '#' do |f| %>
+  <%= f.input :first_name, :placeholder => 'Your first name', :hint => 'Just enter your first name' %>
+  <%= f.input :last_name, :placeholder => 'Your last name', :hint => 'Just enter your last name', :label => false %>
+  <%= f.input :disabled_feature, :label => "Disabled", :disabled => true %>
+  <%= f.input :age, :collection => 18..60 %>
+  <%= f.input :notice, :as => :text, :input_html => {:rows => 3} %>
+  <%= f.input :options, :collection => ['Yes', 'No'], :as => :check_boxes %>
+  <%= f.input :sex, :collection => ['Male', 'Female'], :as => :radio %>
+  <%= f.input :image, :as => :file, :hint => 'max. 2 MB' %>
+
+  <div class="input inline">
+    <%= f.label 'Range' -%>
+    <%= f.input :range_from, :input_html => {:class => 'xsmall'}, :label => 'from' %>
+    <%= f.input :range_to, :input_html => {:class => 'xsmall'}, :label => 'to' %>
+    <%= f.hint 'Inline inputs' %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, :value => 'Create User', :class => 'primary' %>
+    <a href="#">Cancel</a>
+  </div>
+<% end %>
