@@ -116,24 +116,24 @@ $stylr-form-error-background-color: lighten(#ff0000, 40%);
     padding: ($stylr-line-height - 1) 20px $stylr-line-height $stylr-form-label-full-width;
     border-top: 1px solid $stylr-gray-color;
 
-    a {
-      @include inline-block();
-      vertical-align: baseline;
-      padding: 4px 0;
-      line-height: $stylr-line-height;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+    // a {
+    //   @include inline-block();
+    //   vertical-align: baseline;
+    //   padding: 4px 0;
+    //   line-height: $stylr-line-height;
+    //   text-decoration: none;
+    //   &:hover {
+    //     text-decoration: underline;
+    //   }
+    // }
 
-    * {
-      margin-right: 5px;
-    }
+    // * {
+    //   margin-right: 5px;
+    // }
 
-    :last-child {
-      margin-right: 0;
-    }
+    // :last-child {
+    //   margin-right: 0;
+    // }
   }
 
   // placeholder text gets special styles; can't be bundled together though for some reason

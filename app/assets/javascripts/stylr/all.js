@@ -11,6 +11,27 @@ var Stylr = {
 
   $(function() {
 
+    Stylr.closeDropdown = function(dropdown) {
+      $(dropdown).removeClass('open');
+      return dropdown;
+    };
+
+    Stylr.toggleDropdown = function(container, dropdown) {
+      var height   = $(container).outerHeight(true);
+      var dropdown = $(dropdown);
+
+      $(Stylr.dropdownButtonSelector).find('> ul').each(function(i, e) {
+        if (!$(e).is(dropdown)) {
+          $(e).removeClass('open');
+        }
+      });
+
+      dropdown.toggleClass('open');
+      dropdown.css('top', height);
+
+      return dropdown;
+    };
+
     // Code pretty printing
     // ====================
 
@@ -20,26 +41,25 @@ var Stylr = {
     // ===================
 
     $('body').live('click', function (e) {
-      $('.dropdown > a').next('ul').removeClass('open');
+      Stylr.closeDropdown($('.dropdown > a').next('ul'));
+      return false;
     });
 
     $('.dropdown > a').live('click', function (e) {
-      var height = $(this).outerHeight(true);
-      $(this).next('ul').toggleClass('open').css('top', height);
+      Stylr.toggleDropdown($(this), $(this).next('ul'));
       return false;
     });
 
     // Dropdown Buttons
     // ================
 
-    $('body').live('click', function (e) {
-      $(Stylr.dropdownButtonSelector).find('> ul').removeClass('open');
+    $('body').live('click', function(e) {
+      Stylr.closeDropdown($(Stylr.dropdownButtonSelector).find('> ul'));
+      return false;
     });
 
-    $(Stylr.dropdownButtonSelector).live('click', function (e) {
-      var height = $(this).outerHeight(true);
-      $(Stylr.dropdownButtonSelector).find('> ul').removeClass('open');
-      $(this).find('> ul').toggleClass('open').css('top', height);
+    $(Stylr.dropdownButtonSelector).live('click', function(e) {
+      Stylr.toggleDropdown($(this), $(this).find('> ul'));
       return false;
     });
 
