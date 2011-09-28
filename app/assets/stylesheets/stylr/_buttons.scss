@@ -25,7 +25,7 @@ $stylr-button-dark-start-color: #333 !default;
 $stylr-button-dark-end-color: darken(#333, 15%) !default;
 
 // button
-@mixin stylr-button {
+@mixin stylr-button() {
   // ------
   // basics
   // ------

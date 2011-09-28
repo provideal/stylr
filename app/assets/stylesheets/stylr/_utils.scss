@@ -1,0 +1,127 @@
+// ------------
+// gradient bar
+// ------------
+$stylr-util-gradient-bar-text-color: #333 !default;
+$stylr-util-gradient-bar-start-color: #f5f5f5 !default;
+$stylr-util-gradient-bar-end-color: #ddd !default;
+$stylr-util-gradient-bar-use-border: true !default;
+$stylr-util-gradient-bar-use-box-shadow: true !default;
+$stylr-util-gradient-bar-use-text-shadow: true !default;
+
+@mixin stylr-util-gradient-bar(
+  $text-color: $stylr-util-gradient-bar-text-color,
+  $start-color: $stylr-util-gradient-bar-start-color,
+  $end-color: $stylr-util-gradient-bar-end-color,
+  $use-border: $stylr-util-gradient-bar-use-border,
+  $use-box-shadow: $stylr-util-gradient-bar-use-box-shadow,
+  $use-text-shadow: $stylr-util-gradient-bar-use-text-shadow
+) {
+  // set the background gradient/color
+  @include background-image(
+    linear-gradient($start-color, $start-color 25%, $end-color)
+  );
+  background-color: $end-color;
+
+  @if $use-text-shadow {
+    @if lightness($text-color) < 50% {
+      @include text-shadow(rgba(#fff, .75) 0 1px 1px);
+    } @else {
+      @include text-shadow(rgba(#000, .25) 0 -1px 0);
+    }
+  }
+  color: $text-color;
+
+  @if $use-box-shadow {
+    @include box-shadow(
+      rgba(#fff, .2) 0 1px 0 inset,
+      rgba(#000, .05) 0 1px 2px
+    );
+  }
+
+  @if $use-border {
+    border: 1px solid darken($end-color, 5%);
+    border-bottom-color: darken($end-color, 15%);
+  }
+}
+
+// --------------
+// dropdown arrow
+// --------------
+
+$stylr-util-dropdown-arrow-color: $stylr-text-color !default;
+
+@mixin stylr-util-dropdown-arrow(
+  $color: $stylr-util-dropdown-arrow-color
+) {
+  &:after {
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    text-indent: -99999px;
+    overflow: hidden;
+    content: "\2193";
+    margin-left: 4px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid $color;
+    @include inline-block;
+  }
+}
+
+// --------------
+// dropdown panel
+// --------------
+
+$stylr-util-dropdown-panel-text-color: $stylr-text-color !default;
+$stylr-util-dropdown-panel-start-color: #f5f5f5 !default;
+$stylr-util-dropdown-panel-end-color: #ddd !default;
+
+@mixin stylr-util-dropdown-panel(
+  $text-color: $stylr-util-dropdown-panel-text-color,
+  $start-color: $stylr-util-dropdown-panel-start-color,
+  $end-color: $stylr-util-dropdown-panel-end-color
+) {
+  @include reset-box-model();
+  @include reset-list-style();
+  @include border-radius(4px);
+  @include min-width(150px);
+  @include stylr-util-gradient-bar(
+    $text-color: $text-color,
+    $start-color: $start-color,
+    $end-color: $end-color
+  );
+
+  z-index: 100;
+  font-size: $stylr-font-size;
+  display: none;
+  position: absolute;
+  left: 0;
+  padding: 4px 0 0 0;
+
+  &.open {
+    display: block;
+  }
+
+  li {
+    display: block;
+    line-height: $stylr-line-height;
+
+    a {
+      display: block;
+      padding: 4px 6px;
+    }
+
+    &:hover {
+      background: darken($end-color, 5%);
+    }
+
+    &.divider {
+      height: 1px;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      background-color: darken($end-color, 5%);
+      border-bottom: 1px solid lighten($end-color, 5%);
+    }
+  }
+}
