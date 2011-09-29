@@ -4,7 +4,7 @@
 // TODO: Refactor me!!!!
 
 var Stylr = {
-  dropdownButtonSelector: '.stylr-button-dropdown'
+  dropdownButtonSelector: '.dropdown-button'
 };
 
 (function($) {
