@@ -1,3 +1,4 @@
+<% @user = Stylr::Docs::User.new; @user.valid? %>
 <%= simple_form_for @user, :url => '#' do |f| %>
   <%= f.input :first_name, :placeholder => 'Your first name', :hint => 'Just enter your first name' %>
   <%= f.input :last_name, :placeholder => 'Your last name', :hint => 'Just enter your last name', :label => false %>

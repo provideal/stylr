@@ -97,6 +97,8 @@ $stylr-util-dropdown-panel-end-color: #ddd !default;
   position: absolute;
   left: 0;
   padding: 4px 0 0 0;
+  color: $text-color;
+  text-align: left;
 
   &.open {
     display: block;
@@ -107,6 +109,7 @@ $stylr-util-dropdown-panel-end-color: #ddd !default;
     line-height: $stylr-line-height;
 
     a {
+      color: $text-color;
       display: block;
       padding: 4px 6px;
     }

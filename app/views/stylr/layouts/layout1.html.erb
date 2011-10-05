@@ -1,0 +1,25 @@
+<% content_for :sidebar do %>
+  <div class="menu">
+    <ul>
+      <li><a href="#"><span style="font-size: 180%">&#9719;</span> Item 1</a></li>
+      <li class="active"><a href="#"><span style="font-size: 180%">&#9813;</span> Item 2</a></li>
+      <li><a href="#"><span style="font-size: 180%">&#9850;</span> Item 3</a></li>
+    </ul>
+  </div>
+<% end %>
+
+<div id="page-actions">
+  <a href="#" class="button primary">New Object</a>
+  <a href="#" class="button danger">Delete</a>
+  <div class="dropdown-button">
+    More...
+    <ul>
+      <li><a href="#">Sub-Item 1</a></li>
+      <li><a href="#">Sub-Item 2</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Sub-Item 3</a></li>
+    </ul>
+  </div>
+</div>
+
+<%= render :template => 'stylr/docs/index' %>

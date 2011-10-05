@@ -1,0 +1,17 @@
+// setup the liquid grid
+$blueprint-liquid-grid-columns: 24;
+$blueprint-liquid-grid-width: 3.167%;
+$blueprint-liquid-grid-margin: 1.042%;
+$blueprint-liquid-container-width: 100%;
+$blueprint-liquid-container-min-width: none;
+
+// setup
+$sidebar-width: 200px;
+
+// imports baby
+@import 'blueprint/liquid';
+@import 'compass/layout/stretching';
+@import 'stylr/all';
+
+// use stylr's typography globally
+@include stylr-typography($use-body: true);

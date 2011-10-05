@@ -9,11 +9,15 @@ $stylr-menu-line-height: $stylr-line-height !default;
 $stylr-menu-text-color: $stylr-text-color !default;
 $stylr-menu-hover-color: lighten($stylr-primary-color, 40%) !default;
 
-@mixin stylr-menu() {
+@mixin stylr-menu(
+  $line-height: $stylr-menu-line-height,
+  $text-color: $stylr-menu-text-color,
+  $hover-color: $stylr-menu-hover-color
+) {
   @include nested-reset();
   @include pie-clearfix();
-  color: $stylr-menu-text-color;
-  line-height: $stylr-menu-line-height;
+  color: $text-color;
+  line-height: $line-height;
 
   > ul {
     @include reset-list-style();
@@ -26,7 +30,7 @@ $stylr-menu-hover-color: lighten($stylr-primary-color, 40%) !default;
       padding: 0 6px;
 
       &:hover {
-        background-color: $stylr-menu-hover-color;
+        background-color: $hover-color;
       }
 
       &.raw:hover {
@@ -34,7 +38,7 @@ $stylr-menu-hover-color: lighten($stylr-primary-color, 40%) !default;
       }
 
       a {
-        color: $stylr-menu-text-color;
+        color: $text-color;
         text-decoration: none;
         display: block;
       }
@@ -43,7 +47,7 @@ $stylr-menu-hover-color: lighten($stylr-primary-color, 40%) !default;
         position: relative;
 
         > a {
-          @include stylr-util-dropdown-arrow($stylr-menu-text-color);
+          @include stylr-util-dropdown-arrow($text-color);
         }
 
         > ul {
@@ -66,19 +70,26 @@ $stylr-topbar-opaque-background: true !default;
 $stylr-topbar-start-color: #323232 !default;
 $stylr-topbar-end-color: #222 !default;
 
-@mixin stylr-topbar {
+@mixin stylr-topbar(
+  $line-height: $stylr-topbar-line-height,
+  $title-width: $stylr-topbar-title-width,
+  $text-color: $stylr-topbar-text-color,
+  $opaque-background: $stylr-topbar-opaque-background,
+  $start-color: $stylr-topbar-start-color,
+  $end-color: $stylr-topbar-end-color
+) {
 
   @include nested-reset();
   @include reset-list-style();
   @include trailer(1);
   @include pie-clearfix();
-  @include border-radius(6px);
 
-  @if $stylr-topbar-opaque-background {
+  @if $opaque-background {
+    @include border-radius(6px);
     @include stylr-util-gradient-bar(
-      $text-color: $stylr-topbar-text-color,
-      $start-color: $stylr-topbar-start-color,
-      $end-color: $stylr-topbar-end-color,
+      $text-color: $text-color,
+      $start-color: $start-color,
+      $end-color: $end-color,
       $use-border: false,
       $use-box-shadow: false,
       $use-text-shadow: true
@@ -86,26 +97,26 @@ $stylr-topbar-end-color: #222 !default;
   }
 
 
-  line-height: $stylr-topbar-line-height;
+  line-height: $line-height;
   padding: 0 10px;
-  color: $stylr-topbar-text-color;
+  color: $text-color;
 
   > h1 {
-    color: $stylr-topbar-text-color;
+    color: $text-color;
     @include float-left();
     font-size: 16px;
-    width: $stylr-topbar-title-width;
+    width: $title-width;
     margin-right: 15px;
   }
 
   .menu {
-    $stylr-menu-line-height: $stylr-topbar-line-height;
-    $stylr-menu-text-color: $stylr-topbar-text-color;
-    $stylr-menu-hover-color: darken($stylr-topbar-end-color, 5%);
+    $stylr-menu-line-height: $line-height;
+    $stylr-menu-text-color: $text-color;
+    $stylr-menu-hover-color: darken($end-color, 5%);
 
-    $stylr-util-dropdown-panel-text-color: $stylr-topbar-text-color;
-    $stylr-util-dropdown-panel-start-color: darken($stylr-topbar-start-color, 5%);
-    $stylr-util-dropdown-panel-end-color: darken($stylr-topbar-end-color, 5%);
+    $stylr-util-dropdown-panel-text-color: $text-color;
+    $stylr-util-dropdown-panel-start-color: darken($start-color, 5%);
+    $stylr-util-dropdown-panel-end-color: darken($end-color, 5%);
 
     @include stylr-menu();
     @include float-left();
@@ -121,6 +132,10 @@ $stylr-topbar-end-color: #222 !default;
 
   .sub-area {
     @include float-right();
+    .menu > ul > li.dropdown > ul {
+      right: 0;
+      left: auto;
+    }
   }
 
   form {
