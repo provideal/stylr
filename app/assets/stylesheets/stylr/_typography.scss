@@ -20,6 +20,11 @@ $base-line-height: $stylr-line-height;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased; // http://maxvoltar.com/archive/-webkit-font-smoothing
     }
+
+    html,
+    body {
+      height: 100%;
+    }
   }
 
   a {

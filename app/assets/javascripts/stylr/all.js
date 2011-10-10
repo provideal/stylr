@@ -42,7 +42,7 @@ var Stylr = {
 
     $('body').live('click', function (e) {
       Stylr.closeDropdown($('.dropdown > a').next('ul'));
-      return false;
+      return true;
     });
 
     $('.dropdown > a').live('click', function (e) {
@@ -55,7 +55,7 @@ var Stylr = {
 
     $('body').live('click', function(e) {
       Stylr.closeDropdown($(Stylr.dropdownButtonSelector).find('> ul'));
-      return false;
+      return true;
     });
 
     $(Stylr.dropdownButtonSelector).live('click', function(e) {
