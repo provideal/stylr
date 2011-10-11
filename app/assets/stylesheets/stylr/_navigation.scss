@@ -110,15 +110,15 @@ $stylr-topbar-end-color: #222 !default;
   }
 
   .menu {
-    $stylr-menu-line-height: $line-height;
-    $stylr-menu-text-color: $text-color;
-    $stylr-menu-hover-color: darken($end-color, 5%);
-
     $stylr-util-dropdown-panel-text-color: $text-color;
     $stylr-util-dropdown-panel-start-color: darken($start-color, 5%);
     $stylr-util-dropdown-panel-end-color: darken($end-color, 5%);
 
-    @include stylr-menu();
+    @include stylr-menu(
+      $line-height: $line-height,
+      $text-color: $text-color,
+      $hover-color: darken($end-color, 5%)
+    );
     @include float-left();
 
     > ul > li {
