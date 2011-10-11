@@ -29,6 +29,7 @@ $stylr-button-dark-end-color: darken(#333, 15%) !default;
   // ------
   // basics
   // ------
+  @include nested-reset();
   cursor: pointer;
   @include inline-block();
   vertical-align: baseline;
