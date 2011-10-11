@@ -29,7 +29,8 @@ $stylr-menu-hover-color: lighten($stylr-primary-color, 40%) !default;
       margin: 0;
       padding: 0 6px;
 
-      &:hover {
+      &:hover,
+      &.active {
         background-color: $hover-color;
       }
 
