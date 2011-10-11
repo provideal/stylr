@@ -42,11 +42,15 @@ $stylr-alert-info-end-color: #359DBB !default;
     @include leader(1);
   }
 
-  > a.close {
+  > a, a.close {
     @include float-right();
     color: $stylr-alert-default-text-color;
     font-weight: bold;
     text-decoration: none;
+  }
+
+  > a:hover {
+    text-decoration: underline;
   }
 
   &.warning {
@@ -56,7 +60,7 @@ $stylr-alert-info-end-color: #359DBB !default;
       $end-color: $stylr-alert-warning-end-color
     );
 
-    > a.close {
+    > a, a.close {
       color: $stylr-alert-warning-text-color;
     }
   }
@@ -68,7 +72,7 @@ $stylr-alert-info-end-color: #359DBB !default;
       $end-color: $stylr-alert-error-end-color
     );
 
-    > a.close {
+    > a, a.close {
       color: $stylr-alert-error-text-color;
     }
   }
@@ -80,7 +84,7 @@ $stylr-alert-info-end-color: #359DBB !default;
       $end-color: $stylr-alert-success-end-color
     );
 
-    > a.close {
+    > a, a.close {
       color: $stylr-alert-success-text-color;
     }
   }
@@ -92,7 +96,7 @@ $stylr-alert-info-end-color: #359DBB !default;
       $end-color: $stylr-alert-info-end-color
     );
 
-    > a.close {
+    > a, a.close {
       color: $stylr-alert-info-text-color;
     }
   }
