@@ -47,7 +47,7 @@ form {
 input[type="submit"],
 button,
 a.button {
-  @include stylr-button();
+  @include stylr-buttons();
 }
 
 // ---------------------------------------------------------------------
@@ -117,31 +117,58 @@ $blueprint-liquid-container-min-width: none;
 body {
   margin: 0 auto;
   width: 920px;
+  height: auto;
   padding: 20px;
   border-left: 3px solid $stylr-light-gray-color;
   border-right: 3px solid $stylr-light-gray-color;
+
+  > h1, > h2 {
+    border-bottom: 2px solid $stylr-light-gray-color;
+  }
+
+  > h2 {
+    @include leader(1);
+  }
 }
 
-section {
-  @include trailing-border();
-  @include clearfix();
-  overflow: visible;
-  border-width: 3px;
-  border-color: $stylr-gray-color;
 
-  h1.section-header {
-    @include margin-trailer(1);
+section {
+  > h3 {
+    @include leader(1);
+    color: #fff;
+    background-color: lighten($stylr-primary-color, 5%);
+    padding: 0 10px;
+    @include border-radius(4px);
+    small {
+      color: lighten($stylr-primary-color, 40%);
+    }
+  }
+
+  > h4 {
+    border-bottom: 1px solid $stylr-light-gray-color;
+    color: $stylr-primary-color;
+  }
+
+  > h5 {
+    border-bottom: 1px solid $stylr-light-gray-color;
+  }
+
+  div.example {
+    @include leader(1);
+    @include trailer(1);
+    background-color: $stylr-light-gray-color;
+    padding: 10px;
+    @include border-radius(6px);
   }
 
   .container {
     $sidebar-width: 200px;
 
-    @include clearfix();
-    @include margin-trailer(1);
-    overflow: visible;
+    @include pie-clearfix();
+    @include trailer(1);
 
-    h2.title {
-      border-bottom: 2px solid $stylr-light-gray-color;
+    > h5 {
+      border-bottom: 1px solid $stylr-light-gray-color;
     }
 
     .sidebar {

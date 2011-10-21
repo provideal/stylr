@@ -1,0 +1,23 @@
+<section id="base">
+  <h3>Basics</h3>
+  <p>stylr uses some global defaults internally. You may change/override this <strong>before</strong> importing any of 
+  the stylr modules. Here is the list of available settings and it's default values:</p>
+  <ul>
+    <li><code>$stylr-font-family:      "Helvetica Neue", Helvetica, Arial, sans-serif !default;</code></li>
+    <li><code>$stylr-font-size:        13px !default;</code></li>
+    <li><code>$stylr-line-height:      18px !default;</code></li>
+    <li><code>$stylr-primary-color:    #3274D0 !default;</code></li>
+    <li><code>$stylr-secondary-color:  #7CBA0F !default;</code></li>
+    <li><code>$stylr-gray-color:       #DCDCDC !default;</code></li>
+    <li><code>$stylr-light-gray-color: #f5f5f5 !default;</code></li>
+    <li><code>$stylr-dark-gray-color:  #2c2c2c !default;</code></li>
+    <li><code>$stylr-text-color:       #333 !default;</code></li>
+    <li><code>$stylr-muted-text-color: lighten($stylr-text-color, 35%)!default;</code></li>
+  </ul>
+  <p>Here is an example how to override the default font-size. In your <code>application.scss.css</code>
+  write:</p>
+  <%= example :print_example => false do %>
+    $stylr-font-size: 16px;
+    @import 'stylr/all';
+  <% end %>
+</section>

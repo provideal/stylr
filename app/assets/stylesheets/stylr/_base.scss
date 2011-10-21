@@ -6,7 +6,7 @@
 @import "compass/utilities/general/float";
 
 // stylr's global contstants
-$stylr-font-family:      "Helvetica Neue", Helvetica, Arial, sans-serif;
+$stylr-font-family:      "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $stylr-font-size:        13px !default;
 $stylr-line-height:      18px !default;
 $stylr-primary-color:    #3274D0 !default;

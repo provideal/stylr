@@ -1,6 +1,81 @@
+<h1>stylr <small>a styling kickstart for your Rails web applications</small></h1>
+
+<p>
+stylr is a collection of reusable <%= link_to 'Sass', 'http://sass-lang.com' %> mixins
+packaged as a <%= link_to 'Rails', 'http://rubyonrails.org' %> 3.1 engine. stylr uses
+the the great <%= link_to 'Compass', 'http://compass-style.org' %> framework by 
+Christopher M. Eppstein. stylr is also inspired and uses some code from 
+<%= link_to 'Twitter`s Bootstrap', 'http://twitter.github.com/bootstrap/' %> project. 
+You can use stylr to kickstart the design of your Rails web application with a large 
+collection of carefully designed css.
+</p>
+<p>
+<strong>stylr provides ready to use styles and patterns for</strong>
+<ol>
+  <li><%= link_to 'Typography', '#typography' %></li>
+  <li><%= link_to 'Tables', '#tables' %></li>
+  <li><%= link_to 'Forms', '#forms' %></li>
+  <li><%= link_to 'Buttons', '#buttons' %></li>
+  <li><%= link_to 'Navigation', '#navigation' %></li>
+  <li><%= link_to 'Alerts', '#alerts' %></li>
+</ol>
+</p>
+
+<h2>Installation</h2>
+<p>Update your Gemfile.</p>
+<pre class="prettyprint">
+gem 'stylr'
+
+$ bundle install
+</pre>
+
+<p>
+Rename your <code>application.css</code> to <code>application.css.scss</code> because stylr is build on
+Sass mixins written in scss syntax.
+</p>
+<pre class="prettyprint">
+$ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.css.scss
+</pre>
+
+<p>
+The last step is to import stylr into the <code>application.css.scss</code> file. You may 
+import everything stylr provides by importing <code>stylr/all</code> or you can cherry 
+pick individual modules if you prefer.
+</p>
+
+<p>
+<span class="label notice">Please note</span> stylr will not apply any styles by just importing
+it (<em>stylr will always apply a css reset (compass/reset) and if you import the typorgraphy 
+module a vertical rhythm will be applied too</em>). You need to include the mixins into your 
+own elements using the <code>@include</code> function. Read the usage section below see examples 
+for this.
+</p>
+
+<pre class="prettyprint">
+// import everything
+@import 'stylr/all';
+
+// ... or cherry pick one or more of the available modules
+// @import 'stylr/typography';
+// @import 'stylr/buttons';
+// @import 'stylr/patterns';
+// @import 'stylr/tables';
+// @import 'stylr/forms';
+// @import 'stylr/navigation';
+// @import 'stylr/alerts';
+</pre>
+
+<h2>Usage <small>how to get the styles</small></h2>
+<p>
+In this section you will learn how to include the provided mixins into
+your own css and how to use and customize it.
+</p>
+
+<%= render 'stylr/docs/base' %>
+<%= render 'stylr/docs/utils' %>
 <%= render 'stylr/docs/typography' %>
-<%= render 'stylr/docs/tables' %>
-<%= render 'stylr/docs/forms' %>
-<%= render 'stylr/docs/buttons' %>
-<%= render 'stylr/docs/navigation' %>
-<%= render 'stylr/docs/alerts' %>
+<%#= render 'stylr/docs/tables' %>
+<%#= render 'stylr/docs/forms' %>
+<%#= render 'stylr/docs/buttons' %>
+<%#= render 'stylr/docs/navigation' %>
+<%#= render 'stylr/docs/alerts' %>

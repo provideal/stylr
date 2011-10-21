@@ -24,106 +24,51 @@ $stylr-button-dark-text-color: #fff !default;
 $stylr-button-dark-start-color: #333 !default;
 $stylr-button-dark-end-color: darken(#333, 15%) !default;
 
+
+// -----------------------------------------------------------------------------
 // button
-@mixin stylr-button() {
-  // ------
+// -----------------------------------------------------------------------------
+@mixin stylr-button(
+  $text-color:  $stylr-button-default-text-color,
+  $start-color:  $stylr-button-default-start-color,
+  $end-color:  $stylr-button-default-end-color
+) {
+  // ---------------------------------------------------------------------------
   // basics
-  // ------
+  // ---------------------------------------------------------------------------
   @include nested-reset();
-  cursor: pointer;
   @include inline-block();
+  @include border-radius(4px);
+  @include single-transition(all, 0.1s, linear);
+  @include stylr-util-gradient-bar(
+    $text-color: $text-color,
+    $start-color: $start-color,
+    $end-color: $end-color
+  );
+  cursor: pointer;
   vertical-align: baseline;
   font-size: $stylr-font-size;
   line-height: normal; // we need to use padding alone, because FF limit line-height by default
   font-family: $stylr-font-family;
   padding: 5px 14px;
+  &::-moz-focus-inner { border: 0; padding: 0; } // Help Firefox not be a jerk about adding extra padding to buttons
   margin: 0;
   background-repeat: no-repeat;
-  &::-moz-focus-inner { border: 0; padding: 0; } // Help Firefox not be a jerk about adding extra padding to buttons
-  @include border-radius(4px);
-  @include single-transition(all, 0.1s, linear);
   text-decoration: none;
+  color: $text-color;
 
-  // --------------------
-  // the "default" button
-  // --------------------
-  @include stylr-util-gradient-bar(
-    $text-color: $stylr-button-default-text-color,
-    $start-color: $stylr-button-default-start-color,
-    $end-color: $stylr-button-default-end-color
-  );
-
-  // --------------------
-  // the "primary" button
-  // --------------------
-  &.primary {
-    @include stylr-util-gradient-bar(
-      $text-color: $stylr-button-primary-text-color,
-      $start-color: $stylr-button-primary-start-color,
-      $end-color: $stylr-button-primary-end-color
-    );
-  }
-
-  // -----------------
-  // the "info" button
-  // -----------------
-  &.info {
-    @include stylr-util-gradient-bar(
-      $text-color: $stylr-button-info-text-color,
-      $start-color: $stylr-button-info-start-color,
-      $end-color: $stylr-button-info-end-color
-    );
-  }
-
-  // -------------------
-  // the "danger" button
-  // -------------------
-  &.danger {
-    @include stylr-util-gradient-bar(
-      $text-color: $stylr-button-danger-text-color,
-      $start-color: $stylr-button-danger-start-color,
-      $end-color: $stylr-button-danger-end-color
-    );
-  }
-
-  // --------------------
-  // the "success" button
-  // --------------------
-  &.success {
-    @include stylr-util-gradient-bar(
-      $text-color: $stylr-button-success-text-color,
-      $start-color: $stylr-button-success-start-color,
-      $end-color: $stylr-button-success-end-color
-    );
-  }
-
-  // -----------------
-  // the "dark" button
-  // -----------------
-  &.dark {
-    @include stylr-util-gradient-bar(
-      $text-color: $stylr-button-dark-text-color,
-      $start-color: $stylr-button-dark-start-color,
-      $end-color: $stylr-button-dark-end-color
-    );
-  }
-
-  // ------
+  // ---------------------------------------------------------------------------
   // states
-  // ------
-
-  // focus state for keyboard and accessibility
+  // ---------------------------------------------------------------------------
   &:focus {
     outline: 1px dotted #666;
   }
 
-  // hover state
   &:hover {
     text-decoration: none;
     background-position: 0 -15px;
   };
 
-  // active state
   &:active {
     @include box-shadow(
       rgba(#000, .25) 0 2px 4px inset,
@@ -131,7 +76,6 @@ $stylr-button-dark-end-color: darken(#333, 15%) !default;
     );
   }
 
-  // disabled state
   &.disabled,
   &:disabled {
     @include box-shadow(none);
@@ -143,10 +87,104 @@ $stylr-button-dark-end-color: darken(#333, 15%) !default;
       background-position: 0;
     }
   }
+}
 
-  // -----
+
+// -----------------------------------------------------------------------------
+// buttons
+// -----------------------------------------------------------------------------
+@mixin stylr-buttons(
+  $default-text-color:  $stylr-button-default-text-color,
+  $default-start-color:  $stylr-button-default-start-color,
+  $default-end-color:  $stylr-button-default-end-color,
+
+  $primary-text-color:  $stylr-button-primary-text-color,
+  $primary-start-color:  $stylr-button-primary-start-color,
+  $primary-end-color:  $stylr-button-primary-end-color,
+
+  $info-text-color:  $stylr-button-info-text-color,
+  $info-start-color:  $stylr-button-info-start-color,
+  $info-end-color:  $stylr-button-info-end-color,
+
+  $danger-text-color:  $stylr-button-danger-text-color,
+  $danger-start-color:  $stylr-button-danger-start-color,
+  $danger-end-color:  $stylr-button-danger-end-color,
+
+  $success-text-color:  $stylr-button-success-text-color,
+  $success-start-color:  $stylr-button-success-start-color,
+  $success-end-color:  $stylr-button-success-end-color,
+
+  $dark-text-color:  $stylr-button-dark-text-color,
+  $dark-start-color:  $stylr-button-dark-start-color,
+  $dark-end-color:  $stylr-button-dark-end-color
+) {
+  // ---------------------------------------------------------------------------
+  // the "default" button
+  // ---------------------------------------------------------------------------
+  @include stylr-button(
+    $text-color: $default-text-color,
+    $start-color: $default-start-color,
+    $end-color: $default-end-color
+  );
+
+  // ---------------------------------------------------------------------------
+  // the "primary" button
+  // ---------------------------------------------------------------------------
+  &.primary {
+    @include stylr-button(
+      $text-color: $primary-text-color,
+      $start-color: $primary-start-color,
+      $end-color: $primary-end-color
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // the "info" button
+  // ---------------------------------------------------------------------------
+  &.info {
+    @include stylr-button(
+      $text-color: $info-text-color,
+      $start-color: $info-start-color,
+      $end-color: $info-end-color
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // the "danger" button
+  // ---------------------------------------------------------------------------
+  &.danger {
+    @include stylr-button(
+      $text-color: $danger-text-color,
+      $start-color: $danger-start-color,
+      $end-color: $danger-end-color
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // the "success" button
+  // ---------------------------------------------------------------------------
+  &.success {
+    @include stylr-button(
+      $text-color: $success-text-color,
+      $start-color: $success-start-color,
+      $end-color: $success-end-color
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // the "dark" button
+  // ---------------------------------------------------------------------------
+  &.dark {
+    @include stylr-button(
+      $text-color: $dark-text-color,
+      $start-color: $dark-start-color,
+      $end-color: $dark-end-color
+    );
+  }
+
+  // ---------------------------------------------------------------------------
   // sizes
-  // -----
+  // ---------------------------------------------------------------------------
   &.large {
     @include border-radius(6px);
     font-size: $stylr-font-size + 2px;
@@ -164,10 +202,37 @@ $stylr-button-dark-end-color: darken(#333, 15%) !default;
   }
 }
 
+
 // dropdown button
-@mixin stylr-button-dropdown {
+@mixin stylr-dropdown-button(
+  $default-text-color:  $stylr-button-default-text-color,
+  $default-start-color:  $stylr-button-default-start-color,
+  $default-end-color:  $stylr-button-default-end-color,
+
+  $primary-text-color:  $stylr-button-primary-text-color,
+  $primary-start-color:  $stylr-button-primary-start-color,
+  $primary-end-color:  $stylr-button-primary-end-color,
+
+  $info-text-color:  $stylr-button-info-text-color,
+  $info-start-color:  $stylr-button-info-start-color,
+  $info-end-color:  $stylr-button-info-end-color,
+
+  $danger-text-color:  $stylr-button-danger-text-color,
+  $danger-start-color:  $stylr-button-danger-start-color,
+  $danger-end-color:  $stylr-button-danger-end-color,
+
+  $success-text-color:  $stylr-button-success-text-color,
+  $success-start-color:  $stylr-button-success-start-color,
+  $success-end-color:  $stylr-button-success-end-color,
+
+  $dark-text-color:  $stylr-button-dark-text-color,
+  $dark-start-color:  $stylr-button-dark-start-color,
+  $dark-end-color:  $stylr-button-dark-end-color
+) {
+
+
   @include stylr-button();
-  @include stylr-util-dropdown-arrow(#333);
+  @include stylr-util-dropdown-arrow($default-text-color);
   position: relative;
 
   a {
@@ -186,4 +251,9 @@ $stylr-button-dark-end-color: darken(#333, 15%) !default;
   > ul {
     @include stylr-util-dropdown-panel();
   }
+}
+
+// deprecated alias
+@mixin stylr-button-dropdown() {
+  @include stylr-dropdown-button();
 }
