@@ -21,6 +21,13 @@
 @include stylr-typography($use-body: true);
 
 // ------------------------------------------------------------------
+// Inline Labels
+// ------------------------------------------------------------------
+span.label {
+  @include stylr-inline-labels();
+}
+
+// ------------------------------------------------------------------
 // Tables: To use stylr's table styles just include the stylr-table()
 // mixin into the table class you like. E.g. table, .mytable ...
 // ------------------------------------------------------------------

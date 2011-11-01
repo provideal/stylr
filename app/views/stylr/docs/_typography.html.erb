@@ -2,7 +2,7 @@
   <h3>Typography <small>Headings, paragraphs, lists, and other inline type elements</small></h3>
   <p>
     The typography module provides one mixin with predefined styles for headings, paragrpahs, lists etc. When you
-    import this module a <%= link_to 'vertical rhythm', 'http://compass-style.org/reference/compass/typography/vertical_rhythm/' %> 
+    import this module a <%= link_to 'vertical rhythm', 'http://compass-style.org/reference/compass/typography/vertical_rhythm/' %>
     is applied to your css automatically.
   </p>
 
@@ -12,14 +12,14 @@
 
   <p><strong>Optional Parameters (with defaults)</strong></p>
   <ul>
-  	<li>
-  		<code>$use-body: false</code>
-  	</li>
+    <li>
+      <code>$use-body: false</code>
+    </li>
   </ul>
 
   <p>
     This mixin can be included anywhere you like. The optional parameter <code>$use-body</code> can be set to
-    <code>true</code> to include styles for the body tag as well. In this case it will only make sense to 
+    <code>true</code> to include styles for the body tag as well. In this case it will only make sense to
     include it at the root level of your css hierarchy.
   </p>
   <%= pre :class => 'prettyprint' do %>
@@ -63,8 +63,8 @@
   <!-- misc. elements -->
   <h5>Misc. elements</h5>
   <p>
-    Emphasis tags <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> should be used to indicate 
-    additional importance or emphasis of a word or phrase relative to its surrounding copy. Use 
+    Emphasis tags <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> should be used to indicate
+    additional importance or emphasis of a word or phrase relative to its surrounding copy. Use
     <code>&lt;strong&gt;</code> for importance and <code>&lt;em&gt;</code> for <em>stress</em> emphasis.
   </p>
   <%= example do %>
@@ -73,12 +73,12 @@
   <% end %>
 
   <p>
-    The <code>&lt;address&gt;</code> element is used for contact information for its nearest ancestor, 
+    The <code>&lt;address&gt;</code> element is used for contact information for its nearest ancestor,
     or the entire body of work.
   </p>
   <p>
-    For abbreviations and acronyms, use the <code>&lt;abbr&gt;</code> tag (<code>&lt;acronym&gt;</code> is 
-    deprecated in <abbr title="HyperText Markup Langugage 5">HTML5</abbr>). Put the shorthand form within 
+    For abbreviations and acronyms, use the <code>&lt;abbr&gt;</code> tag (<code>&lt;acronym&gt;</code> is
+    deprecated in <abbr title="HyperText Markup Langugage 5">HTML5</abbr>). Put the shorthand form within
     the tag and set a title for the complete name.
   </p>
   <%= example do %>
@@ -96,7 +96,7 @@
   <h5>Presenting code</h5>
   <p>
     Pimp your code in style with the two simple tags <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code>.
-    For even more awesomeness through javascript, stylr comes bundled with 
+    For even more awesomeness through javascript, stylr comes bundled with
     <%= link_to 'Googles code prettify library', 'http://code.google.com/p/google-code-prettify/' %>.
   </p>
   <p>
@@ -129,7 +129,7 @@
   <!-- blockquotes -->
   <h5>Blockquotes</h5>
   <p>
-    To include a blockquote, wrap <code>&lt;blockquote&gt;</code> around <code>&lt;p&gt;</code> 
+    To include a blockquote, wrap <code>&lt;blockquote&gt;</code> around <code>&lt;p&gt;</code>
     and <code>&lt;small&gt;</code> tags. Use the <code>&lt;small&gt;</code> element to cite your source
     and you'll get an em dash <code>&amp;mdash;</code> before it.
   </p>
@@ -139,24 +139,6 @@
       <small>Dr. Julius Hibbert</small>
     </blockquote>
   <% end %>
-
-
-  <!-- inline labels -->
-  <h5>Inline Labels</h5>
-  <p>
-    To call attention to or flag any phrase in your body text stylr comes with some nice inline labels.
-    Just use <code>&lt;span class=&quot;label&quot;/&gt;</code> plus a style class and you are set.
-    Available style classes are <code>success</code>, <code>warning</code>, <code>important</code> and 
-    <code>notice</code>. To get the default label just omit the style class.
-  </p>
-  <%= example do %>
-    <span class="label">default</span>
-    <span class="label success">success</span>
-    <span class="label warning">warning</span>
-    <span class="label important">important</span>
-    <span class="label notice">notice</span>
-  <% end %>
-
 
   <h5>Lists</h5>
   <h6>Unordered <code>&lt;ul&gt;</code></h6>
@@ -250,4 +232,34 @@
     </dl>
   <% end %>
 
+
+  <h4>@mixin stylr-inline-labels();</h4>
+  <p><strong>Global default variables</strong></p>
+  <p>none<p>
+
+  <p><strong>Optional Parameters (with defaults)</strong></p>
+  <p>none</p>
+
+  <p>Use this mixin to create nice inline labels. Just apply to a span class of your choice.</p>
+
+  <%= pre :class => 'prettyprint' do %>
+    span.label {
+      @include stylr-inline-labels();
+    }
+  <% end %>
+
+  <p>
+    To call attention to or flag any phrase in your body text stylr comes with some nice inline labels.
+    Just use <code>&lt;span class=&quot;label&quot;/&gt;</code> plus a style class and you are set.
+    Available style classes are <code>success</code>, <code>warning</code>, <code>important</code> and
+    <code>notice</code>. To get the default label just omit the style class.
+  </p>
+
+  <%= example do %>
+    <span class="label">default</span>
+    <span class="label success">success</span>
+    <span class="label warning">warning</span>
+    <span class="label important">important</span>
+    <span class="label notice">notice</span>
+  <% end %>
 </section>

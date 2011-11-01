@@ -243,23 +243,20 @@ $base-line-height: $stylr-line-height;
     @include trailer(1);
   }
 
-  // ======
-  // labels
-  // ======
-
-  .label {
-    padding: 1px 3px 2px;
-    background-color: #bfbfbf;
-    font-size: $stylr-font-size * .75;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-    @include border-radius(3px);
-
-    &.important { background-color: #C43C35; }
-    &.warning   { background-color: #F89406; }
-    &.success   { background-color: #46A546; }
-    &.notice    { background-color: #62CFFC; }
-  }
-
 } // end mixin
+
+// inline labels
+@mixin stylr-inline-labels() {
+  padding: 1px 3px 2px;
+  background-color: #bfbfbf;
+  font-size: $stylr-font-size * .75;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  @include border-radius(3px);
+
+  &.important { background-color: #C43C35; }
+  &.warning   { background-color: #F89406; }
+  &.success   { background-color: #46A546; }
+  &.notice    { background-color: #62CFFC; }
+}
