@@ -9,7 +9,7 @@ require "stylr/version"
 Gem::Specification.new do |s|
   s.name        = "stylr"
   s.version     = Stylr::VERSION
-  s.authors     = ["René Sprotte"]
+  s.authors     = ["Rene Sprotte"]
   s.email       = ["rene.sprotte@provideal.net"]
   s.homepage    = "https://github.com/provideal/stylr"
   s.summary     = "A collection of reusable CSS stuff based on SASS and Compass packaged as a Rails 3.1 engine."
