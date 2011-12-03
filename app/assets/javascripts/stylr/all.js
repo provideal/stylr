@@ -25,6 +25,8 @@ var Stylr = {
           $(e).removeClass('open');
         }
       });
+      
+      if (!dropdown.is(':visible')) $('body').click();
 
       dropdown.toggleClass('open');
       dropdown.css('top', height);
