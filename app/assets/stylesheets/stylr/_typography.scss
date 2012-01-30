@@ -1,5 +1,8 @@
 @import "stylr/base";
 
+// global reset
+@include global-reset();
+
 // globally set a vertical rhythm
 $base-font-size: $stylr-font-size;
 $base-line-height: $stylr-line-height;

@@ -3,10 +3,10 @@
 <p>
 stylr is a collection of reusable <%= link_to 'Sass', 'http://sass-lang.com' %> mixins
 packaged as a <%= link_to 'Rails', 'http://rubyonrails.org' %> 3.1 engine. stylr uses
-the the great <%= link_to 'Compass', 'http://compass-style.org' %> framework by 
-Christopher M. Eppstein. stylr is also inspired and uses some code from 
-<%= link_to 'Twitter`s Bootstrap', 'http://twitter.github.com/bootstrap/' %> project. 
-You can use stylr to kickstart the design of your Rails web application with a large 
+the the great <%= link_to 'Compass', 'http://compass-style.org' %> framework by
+Christopher M. Eppstein. stylr is also inspired and uses some code from
+<%= link_to 'Twitter`s Bootstrap', 'http://twitter.github.com/bootstrap/' %> project.
+You can use stylr to kickstart the design of your Rails web application with a large
 collection of carefully designed css.
 </p>
 <p>
@@ -38,16 +38,16 @@ $ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.c
 </pre>
 
 <p>
-The last step is to import stylr into the <code>application.css.scss</code> file. You may 
-import everything stylr provides by importing <code>stylr/all</code> or you can cherry 
-pick individual modules if you prefer.
+The last step is to import stylr into the <code>application.css.scss</code> file. You may
+import everything stylr provides by importing <code>stylr/all</code> or you can cherry-pick
+individual modules if you prefer.
 </p>
 
 <p>
 <span class="label notice">Please note</span> stylr will not apply any styles by just importing
-it (<em>stylr will always apply a css reset (compass/reset) and if you import the typorgraphy 
-module a vertical rhythm will be applied too</em>). You need to include the mixins into your 
-own elements using the <code>@include</code> function. Read the usage section below see examples 
+it <em>but if you import the typorgraphy module, stylr will globally apply a css reset (compass/reset) and
+a vertical rhythm.</em>). You need to include the mixins into your
+own elements using the <code>@include</code> function. Read the usage section below see examples
 for this.
 </p>
 
@@ -56,11 +56,11 @@ for this.
 @import 'stylr/all';
 
 // ... or cherry pick one or more of the available modules
-// @import 'stylr/typography';
+@import 'stylr/typography';
 // @import 'stylr/buttons';
 // @import 'stylr/patterns';
 // @import 'stylr/tables';
-// @import 'stylr/forms';
+@import 'stylr/forms';
 // @import 'stylr/navigation';
 // @import 'stylr/alerts';
 </pre>
