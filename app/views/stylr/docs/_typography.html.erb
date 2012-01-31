@@ -1,9 +1,7 @@
 <section id="typography">
   <h3>Typography <small>Headings, paragraphs, lists, and other inline type elements</small></h3>
   <p>
-    The typography module provides one mixin with predefined styles for headings, paragrpahs, lists etc. When you
-    import this module a <%= link_to 'vertical rhythm', 'http://compass-style.org/reference/compass/typography/vertical_rhythm/' %>
-    is applied to your css automatically.
+    The typography module provides one mixin with predefined styles for headings, paragrpahs, lists etc.
   </p>
 
   <h4>@mixin stylr-typography();</h4>
@@ -20,7 +18,9 @@
   <p>
     This mixin can be included anywhere you like. The optional parameter <code>$use-body</code> can be set to
     <code>true</code> to include styles for the body tag as well. In this case it will only make sense to
-    include it at the root level of your css hierarchy.
+    include it at the root level of your css hierarchy. If you set <code>$use-body: true</code> a global reset
+    and a <%= link_to 'vertical rhythm', 'http://compass-style.org/reference/compass/typography/vertical_rhythm/' %>
+    is applied to your css automatically.
   </p>
   <%= pre :class => 'prettyprint' do %>
     @include stylr-typography($use-body: true);

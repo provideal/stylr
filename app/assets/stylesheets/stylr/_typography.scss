@@ -1,12 +1,4 @@
-@import "stylr/base";
-
-// global reset
-@include global-reset();
-
-// globally set a vertical rhythm
-$base-font-size: $stylr-font-size;
-$base-line-height: $stylr-line-height;
-@include establish-baseline;
+@import "stylr/utils";
 
 // typography mixin
 @mixin stylr-typography($use-body: false) {
@@ -16,6 +8,14 @@ $base-line-height: $stylr-line-height;
   // =========
 
   @if $use-body == true {
+    // global reset
+    @include global-reset();
+
+    // globally set a vertical rhythm
+    $base-font-size: $stylr-font-size;
+    $base-line-height: $stylr-line-height;
+    @include establish-baseline;
+
     body {
       font-family: $stylr-font-family;
       font-weight: normal;

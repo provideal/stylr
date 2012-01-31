@@ -16,6 +16,3 @@ $stylr-light-gray-color: #f5f5f5 !default;
 $stylr-dark-gray-color:  #2c2c2c !default;
 $stylr-text-color:       #333 !default;
 $stylr-muted-text-color: lighten($stylr-text-color, 35%)!default;
-
-// stylr imports
-@import "stylr/utils";
