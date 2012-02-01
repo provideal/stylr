@@ -24,7 +24,10 @@ collection of carefully designed css.
 <h2>Installation</h2>
 <p>Update your Gemfile.</p>
 <pre class="prettyprint">
-gem 'stylr'
+group :assets do
+  gem 'compass-rails'
+  gem 'stylr'
+end
 
 $ bundle install
 </pre>

@@ -2,10 +2,8 @@
 
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
 require "stylr/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "stylr"
   s.version     = Stylr::VERSION
@@ -20,6 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '> 3.1'
   s.add_dependency 'sass-rails', '> 3.1'
-  s.add_dependency 'compass', '> 0.12.alpha.0'
+  s.add_dependency 'compass-rails', '>= 1.0.0.rc.1'
   s.add_dependency 'jquery-rails'
 end
