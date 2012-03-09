@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '> 3.1'
   s.add_dependency 'sass-rails', '> 3.1'
-  s.add_dependency 'compass-rails', '>= 1.0.0.rc.1'
+  s.add_dependency 'compass-rails', '>= 1.0.0.rc.3'
   s.add_dependency 'jquery-rails'
 end
