@@ -47,7 +47,7 @@ var Stylr = {
       return true;
     });
 
-    $('.dropdown > a').live('click', function (e) {
+    $(document).on('click', '.dropdown > a', function (e) {
       Stylr.toggleDropdown($(this), $(this).next('ul'));
       return false;
     });
