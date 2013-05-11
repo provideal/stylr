@@ -25,7 +25,7 @@ var Stylr = {
           $(e).removeClass('open');
         }
       });
-      
+
       if (!dropdown.is(':visible')) $('body').click();
 
       dropdown.toggleClass('open');
@@ -42,7 +42,7 @@ var Stylr = {
     // Dropdown Navigation
     // ===================
 
-    $('body').live('click', function (e) {
+    $(document).on('click', 'body', function (e) {
       Stylr.closeDropdown($('.dropdown > a').next('ul'));
       return true;
     });
@@ -55,12 +55,12 @@ var Stylr = {
     // Dropdown Buttons
     // ================
 
-    $('body').live('click', function(e) {
+    $(document).on('click', 'body', function(e) {
       Stylr.closeDropdown($(Stylr.dropdownButtonSelector).find('> ul'));
       return true;
     });
 
-    $(Stylr.dropdownButtonSelector).live('click', function(e) {
+    $(document).on('click', Stylr.dropdownButtonSelector, function(e) {
       Stylr.toggleDropdown($(this), $(this).find('> ul'));
       return false;
     });
@@ -69,7 +69,7 @@ var Stylr = {
     // Alerts
     // ======
 
-    $('.alert > a.close').live('click', function() {
+    $(document).on('click', '.alert > a.close', function() {
       $(this).parent().remove();
       return false;
     });
